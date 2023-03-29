@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using RAS.Infrastructure.Data;
+using RAS.Infrastructure.DependencyInjection;
 using Utils.Library.Interfaces;
 using Module = Autofac.Module;
 
@@ -13,5 +14,8 @@ public class InfrastructureDIModule : Module
            .As(typeof(IRepository<>))
            .As(typeof(IReadRepository<>))
            .InstancePerLifetimeScope();
+
+        builder.RegisterModule<AuthDIModule>();
+        builder.RegisterModule<UserDIModule>();
     }
 }

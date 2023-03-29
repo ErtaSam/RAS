@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppInitializer } from './core/app.initializer';
+import { AccountPopupComponent } from './core/components/account-popup/account-popup.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { SidebarModule } from './core/components/sidebar/sidebar.module';
 import { ErrorNotificationInterceptor } from './core/interceptors/error-notification.interceptor';
@@ -24,7 +25,7 @@ function initApp(initializer: AppInitializer) {
 }
 
 @NgModule({
-	declarations: [AppComponent, NavbarComponent, MainLayoutComponent, UnauthorizedLayoutComponent],
+	declarations: [AppComponent, NavbarComponent, MainLayoutComponent, UnauthorizedLayoutComponent, AccountPopupComponent],
 	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, TranslateModule.forRoot(), HttpClientModule, SidebarModule],
 	providers: [
 		AppInitializer,

@@ -12,7 +12,6 @@ public class CallerAccessor : ICallerAccessor
     public CallerAccessor()
     {
         UserId = Guid.Empty;
-        Permissions = new List<string>();
     }
 
     public CallerAccessor(IEnumerable<Claim> claims)
@@ -58,12 +57,6 @@ public class CallerAccessor : ICallerAccessor
     }
 
     public Guid UserId { get; init; }
-    public List<string> Permissions { get; init; } = new List<string>();
-
-    public bool HasPermission(string permission)
-    {
-        return Permissions.Any(x => x == permission);
-    }
 
     private static void Throw(string field)
     {

@@ -1,4 +1,4 @@
-package com.kms.angular;
+package com.ras.angular;
 
 import com.getcapacitor.BridgeActivity;
 

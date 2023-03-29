@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { firstValueFrom } from 'rxjs';
 import { AvailableCultures } from './constants/culture.constants';
+import { AccountService } from './services/account.service';
+import { AuthService } from './services/api/auth.service';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let require: any;
 
 @Injectable({ providedIn: 'root' })
 export class AppInitializer {
-	constructor(private translateService: TranslateService, private router: Router) {
+	constructor(
+		private translateService: TranslateService,
+		private router: Router,
+		private authService: AuthService,
+		private accountService: AccountService,
+	) {
 		// Nothing
 	}
 
@@ -25,6 +33,11 @@ export class AppInitializer {
 
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			this.translateService.setDefaultLang(defaultCulture!.isoCode);
+
+			if (this.authService.isAuthenticated) {
+				this.authService.isAuthenticated = true;
+				await firstValueFrom(this.accountService.getCurrentUser());
+			}
 		} catch (error) {
 			this.router.navigate(['/logout']);
 		} finally {
