@@ -2,9 +2,9 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-	appId: 'com.kms.app',
-	appName: 'kms',
-	webDir: 'dist/kms',
+	appId: 'com.ras.app',
+	appName: 'ras',
+	webDir: 'dist/ras',
 	bundledWebRuntime: false,
 	server: {
 		url: 'http://192.168.1.242:4200',

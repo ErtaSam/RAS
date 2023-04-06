@@ -16,7 +16,7 @@ public class ConfigureJwtBearerOptions : IConfigureNamedOptions<JwtBearerOptions
 
     private TokenValidationParameters GetValidationParameters()
     {
-        var key = Encoding.UTF8.GetBytes("SSSuuuuperKeyKeyKEYKeYKEy!");
+        var key = Encoding.UTF8.GetBytes("The SecRet KEY fOr TheE JWT!");
         var tokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
