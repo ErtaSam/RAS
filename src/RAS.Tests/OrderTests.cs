@@ -21,7 +21,7 @@ public class OrderTests
     {
         var order = new OrderEntity();
 
-        order.Cancelled();
+        order.Paid();
         Assert.True(order.Status == "Paid");
     }
 
@@ -30,7 +30,7 @@ public class OrderTests
     {
         var order = new OrderEntity();
 
-        order.Cancelled();
+        order.Approved();
         Assert.True(order.Status == "Approved");
     }
 
@@ -39,8 +39,8 @@ public class OrderTests
     {
         var order = new OrderEntity();
 
-        order.Cancelled();
-        Assert.True(order.Status == "BeingPrepared");
+        order.BeingPrepared();
+        Assert.True(order.Status == "Being Prepared");
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class OrderTests
     {
         var order = new OrderEntity();
 
-        order.Cancelled();
+        order.Prepared();
         Assert.True(order.Status == "Prepared");
     }
 
