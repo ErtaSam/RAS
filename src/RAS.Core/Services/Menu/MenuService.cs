@@ -1,4 +1,4 @@
-using RAS.Core.Aggregates.Menu.Entities;
+﻿using RAS.Core.Aggregates.Menu.Entities;
 using RAS.Core.Aggregates.User.Entities;
 using RAS.Core.Exceptions;
 using RAS.Core.Interfaces.Menu;
@@ -16,9 +16,20 @@ public class MenuService : IMenuService
 
     private IRepository<MenuEntity> MenuRepo { get; }
 
-    public async Task<ICollection<MenuEntity>> GetMenu(CancellationToken cancellationToken = default)
+    public async Task<ICollection<MenuEntity>> GetMenu(DateTime dateTime, CancellationToken cancellationToken = default)
     {
         var menu = await MenuRepo.ListAsync(cancellationToken);
-        return menu;
+
+        if (dateTime.TimeOfDay <= new TimeSpan(11, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(8, 0, 0))
+        {
+            return menu.Where(x => x.Type == "Pusryčiai" || x.Type == "Pagrindinis").ToList();
+        }
+        else if (dateTime.TimeOfDay <= new TimeSpan(14, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(11, 0, 0))
+        {
+            return menu.Where(x => x.Type == "Pietūs" || x.Type == "Pagrindinis").ToList();
+
+        }
+        return menu.Where(x => x.Type == "Pagrindinis").ToList();
     }
+
 }

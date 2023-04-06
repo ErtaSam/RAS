@@ -14,7 +14,7 @@ public class MenuServiceTests
     {
         var service = GetService();
 
-        var menu = await service.GetMenu();
+        var menu = await service.GetMenu(new DateTime().AddHours(12));
         var result = menu.Where(x => x.Type != "Pusryčiai").Where(x => x.Type != "Pagrindinis");
 
         Assert.True(result.Count() == 0);
