@@ -24,8 +24,4 @@
     <ProjectReference Include="..\RAS.Core\RAS.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Migrations\" />
-  </ItemGroup>
-
 </Project>
