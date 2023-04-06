@@ -11,5 +11,5 @@ public class MenuEntity : BaseEntity, IAggregateRoot
     public string Type { get; set; } = null!;
     public string Name { get; set; } = null!;
 
-    public List<MenuItemEntity> MenuItems { get; set; } = new();
+    public List<MenuMenuItemEntity> MenuItems { get; set; } = new();
 }
