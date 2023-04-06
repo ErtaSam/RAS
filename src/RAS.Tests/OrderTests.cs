@@ -51,6 +51,4 @@ public class OrderTests
         order.Prepared();
         Assert.True(order.Status == "Prepared");
     }
-
-
 }

@@ -34,4 +34,3 @@ public class OrderEntity : BaseEntity, IAggregateRoot
         Status = "Prepared";
     }
 }
-
