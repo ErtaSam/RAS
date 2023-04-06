@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RAS.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using RAS.Infrastructure.Data;
 namespace RAS.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230406194705_AddMenuEntity")]
+    partial class AddMenuEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,37 +105,6 @@ namespace RAS.Infrastructure.Migrations
                     b.HasIndex("MenuItemId");
 
                     b.ToTable("MenuMenuItems", (string)null);
-                });
-
-            modelBuilder.Entity("RAS.Core.Aggregates.Order.Entities.OrderEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<DateTimeOffset?>("CreatedAt")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetimeoffset")
-                        .HasDefaultValueSql("SYSDATETIMEOFFSET()");
-
-                    b.Property<DateTimeOffset?>("ModifiedAt")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetimeoffset")
-                        .HasDefaultValueSql("SYSDATETIMEOFFSET()");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(64)");
-
-                    b.Property<decimal>("Sum")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("RAS.Core.Aggregates.User.Entities.UserEntity", b =>
