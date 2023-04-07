@@ -9,12 +9,14 @@ namespace RAS.Core.Services.Menu;
 public class MenuService : IMenuService
 {
 
-    public MenuService(IRepository<MenuEntity> menuRepo)
+    public MenuService(IRepository<MenuEntity> menuRepo, IRepository<MenuItemEntity> menuItemRepo)
     {
         MenuRepo = menuRepo ?? throw new ArgumentNullException(nameof(menuRepo));
+        MenuItemRepo = menuItemRepo ?? throw new ArgumentNullException(nameof(menuItemRepo));
     }
 
     private IRepository<MenuEntity> MenuRepo { get; }
+    private IRepository<MenuItemEntity> MenuItemRepo { get; }
 
     public async Task<ICollection<MenuEntity>> GetMenu(DateTime dateTime, CancellationToken cancellationToken = default)
     {
@@ -32,4 +34,20 @@ public class MenuService : IMenuService
         return menu.Where(x => x.Type == "Pagrindinis").ToList();
     }
 
+    public async Task<MenuItemEntity> GetMenuItem(Guid menuItemId, CancellationToken cancellationToken = default)
+    {
+        var menuItem = await MenuItemRepo.GetByIdAsync(menuItemId, cancellationToken);
+
+        if (menuItem is null)
+        {
+            throw new MenuItemNotFoundException(menuItemId);
+        }
+
+        return menuItem;
+    }
+
+    public async Task<MenuItemEntity> CreateMenuItem(MenuItemEntity request, CancellationToken cancellationToken = default)
+    {
+        return await MenuItemRepo.AddAsync(request, cancellationToken);
+    }
 }
