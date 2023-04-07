@@ -1,7 +1,11 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Http;
 using RAS.Core.Interfaces;
+using RAS.Core.Interfaces.Menu;
+using RAS.Core.Interfaces.User;
 using RAS.Core.Services;
+using RAS.Core.Services.Menu;
+using RAS.Core.Services.User;
 
 namespace RAS.Core;
 
@@ -20,5 +24,9 @@ public class CoreDIModule : Module
             }
             return new CallerAccessor(principal.Claims.ToList());
         }).InstancePerLifetimeScope();
+
+        builder.RegisterType<MenuService>()
+            .As<IMenuService>()
+            .InstancePerLifetimeScope();
     }
 }
