@@ -45,11 +45,12 @@ public class MenuServiceTests
     private IMenuService GetService()
     {
         var mockMenuRepo = new Mock<IRepository<MenuEntity>>();
-        
+        var mockMenuItemRepo = new Mock<IRepository<MenuItemEntity>>();
+
         mockMenuRepo
               .Setup(repo => repo.ListAsync(CancellationToken.None))
               .ReturnsAsync(Menu);
 
-        return new Core.Services.Menu.MenuService(mockMenuRepo.Object);
+        return new Core.Services.Menu.MenuService(mockMenuRepo.Object, mockMenuItemRepo.Object);
     }
 }

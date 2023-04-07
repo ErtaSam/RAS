@@ -15,6 +15,10 @@ public class AutoMapperProfiles : Profile
         CreateMap<UserEntity, UserModel>();
         CreateMap<OrderEntity, OrderModel>().ReverseMap();
         CreateMap<MenuItemEntity, MenuItemModel>().ReverseMap();
-        CreateMap<MenuEntity, MenuModel>().ReverseMap();
-    }
+        CreateMap<MenuEntity, MenuModel>()
+            .ForMember(dest => dest.MenuItems, opt => opt.MapFrom(x => x.MenuItems.Select(x => x.MenuItem)));
+        CreateMap<MenuModel, MenuEntity>()
+            .ForMember(dest => dest.MenuItems, opt => opt.MapFrom(src => src.MenuItems.Select(x => new MenuMenuItemEntity { MenuId = src.Id, MenuItemId = x.Id })));
+    
+}
 }
