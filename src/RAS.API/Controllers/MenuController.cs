@@ -32,6 +32,19 @@ public class MenuController : BaseController
         return Mapper.Map<MenuItemModel>(response);
     }
 
+    [HttpGet]
+    public async Task<ICollection<MenuModel>> GetMenu(CancellationToken cancellationToken = default)
+    {
+        var response = await MenuService.GetMenu(DateTime.Now, cancellationToken);
+        return Mapper.Map<ICollection<MenuModel>>(response);
+    }
+
+    [HttpPost("menu")]
+    public async Task<MenuModel> CreateMenu([FromBody] MenuModel request, CancellationToken cancellationToken = default)
+    {
+        var response = await MenuService.CreateMenu(Mapper.Map<MenuEntity>(request), cancellationToken);
+        return Mapper.Map<MenuModel>(response);
+    }
 }
 
 

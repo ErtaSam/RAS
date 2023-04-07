@@ -1,5 +1,6 @@
 ﻿using RAS.Core.Aggregates.Menu.Entities;
-using RAS.Core.Aggregates.User.Entities;
+using RAS.Core.Aggregates.Menu.Specs;
+using RAS.Core.Aggregates.Users.Specs;
 using RAS.Core.Exceptions;
 using RAS.Core.Interfaces.Menu;
 using Utils.Library.Interfaces;
@@ -18,9 +19,10 @@ public class MenuService : IMenuService
     private IRepository<MenuEntity> MenuRepo { get; }
     private IRepository<MenuItemEntity> MenuItemRepo { get; }
 
-    public async Task<ICollection<MenuEntity>> GetMenu(DateTime dateTime, CancellationToken cancellationToken = default)
+    public async Task<ICollection<MenuEntity>> GetMenu( DateTime dateTime, CancellationToken cancellationToken = default)
     {
-        var menu = await MenuRepo.ListAsync(cancellationToken);
+        var spec = new GetMenuSpec();
+        var menu = await MenuRepo.ListAsync(spec, cancellationToken);
 
         if (dateTime.TimeOfDay <= new TimeSpan(11, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(8, 0, 0))
         {
@@ -32,6 +34,12 @@ public class MenuService : IMenuService
 
         }
         return menu.Where(x => x.Type == "Pagrindinis").ToList();
+    }
+
+    public async Task<MenuEntity> CreateMenu(MenuEntity request, CancellationToken cancellationToken = default)
+    {
+        await MenuRepo.AddAsync(request, cancellationToken);
+        return await MenuRepo.GetBySpecAsync(new GetMenuByIdSpec(request.Id), cancellationToken);
     }
 
     public async Task<MenuItemEntity> GetMenuItem(Guid menuItemId, CancellationToken cancellationToken = default)
