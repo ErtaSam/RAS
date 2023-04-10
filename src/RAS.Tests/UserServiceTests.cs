@@ -42,6 +42,6 @@ public class UserServiceTests
               .Setup(repo => repo.GetByIdAsync(user.Id, CancellationToken.None))
               .ReturnsAsync(user);
 
-        return new Core.Services.User.OrderService(mockUserRepo.Object);
+        return new Core.Services.User.UserService(mockUserRepo.Object);
     }
 }
