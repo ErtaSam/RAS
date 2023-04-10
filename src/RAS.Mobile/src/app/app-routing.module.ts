@@ -17,6 +17,11 @@ const routes: Routes = [
 				canLoad: [OnlyAuthorizedGuard],
 			},
 			{
+				path: 'menu',
+				loadChildren: () => import('./features/menu/menu.module').then((x) => x.MenuModule),
+				canLoad: [OnlyAuthorizedGuard],
+			},
+			{
 				path: 'order',
 				loadChildren: () => import('./features/order/order.module').then((x) => x.OrderModule),
 				canLoad: [OnlyAuthorizedGuard],
