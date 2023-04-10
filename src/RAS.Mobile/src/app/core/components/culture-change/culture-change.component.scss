@@ -1,0 +1,35 @@
+.culture-change {
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.dropdown-menu.show {
+	min-width: 100%;
+}
+
+:not(.navbar) .dropdown .dropdown-menu::before {
+	content: none;
+}
+
+.dropdown-menu {
+	min-width: 0rem;
+}
+
+:not(.navbar) .dropdown .dropdown-menu {
+	box-shadow: none;
+}
+
+ul,
+ul:hover {
+	background-color: transparent;
+}
+
+a,
+a:hover {
+	background-color: transparent;
+}
