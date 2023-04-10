@@ -1,4 +1,6 @@
-﻿using RAS.Core.Aggregates.Menu.Entities;
+﻿using Microsoft.AspNetCore.Mvc;
+using RAS.Core.Aggregates.Menu.Entities;
+using RAS.Core.Aggregates.Menu.Requests;
 using RAS.Core.Aggregates.Menu.Specs;
 using RAS.Core.Aggregates.Users.Specs;
 using RAS.Core.Exceptions;
@@ -19,9 +21,9 @@ public class MenuService : IMenuService
     private IRepository<MenuEntity> MenuRepo { get; }
     private IRepository<MenuItemEntity> MenuItemRepo { get; }
 
-    public async Task<ICollection<MenuEntity>> GetMenu( DateTime dateTime, CancellationToken cancellationToken = default)
+    public async Task<ICollection<MenuEntity>> GetMenu(GetMenuRequest request, DateTime dateTime, CancellationToken cancellationToken = default)
     {
-        var spec = new GetMenuSpec();
+        var spec = new GetMenuSpec(request);
         var menu = await MenuRepo.ListAsync(spec, cancellationToken);
 
         if (dateTime.TimeOfDay <= new TimeSpan(11, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(8, 0, 0))

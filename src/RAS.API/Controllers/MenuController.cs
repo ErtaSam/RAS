@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RAS.Core.Aggregates.Menu.Entities;
 using RAS.Core.Aggregates.Menu.Models;
+using RAS.Core.Aggregates.Menu.Requests;
 using RAS.Core.Interfaces.Menu;
 using RAS.Core.Services.Menu;
 
@@ -33,9 +34,9 @@ public class MenuController : BaseController
     }
 
     [HttpGet]
-    public async Task<ICollection<MenuModel>> GetMenu(CancellationToken cancellationToken = default)
+    public async Task<ICollection<MenuModel>> GetMenu([FromQuery] GetMenuRequest request, CancellationToken cancellationToken = default)
     {
-        var response = await MenuService.GetMenu(DateTime.Now, cancellationToken);
+        var response = await MenuService.GetMenu(request, DateTime.Now, cancellationToken);
         return Mapper.Map<ICollection<MenuModel>>(response);
     }
 

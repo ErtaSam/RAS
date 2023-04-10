@@ -1,3 +1,13 @@
+<div class="row mb-3" *ngIf="request">
+	<div class="col-12 col-md-3 col-lg-2">
+		<kendo-floatinglabel class="w-100" [text]="'label.name' | translate">
+			<kendo-textbox placeholder=" " [(ngModel)]="request.name" (valueChange)="onFilterChange({name: $event})">
+				<ng-template kendoComboBoxItemTemplate let-dataItem> {{dataItem.firstName + ' ' + dataItem.lastName}} </ng-template>
+			</kendo-textbox>
+		</kendo-floatinglabel>
+	</div>
+</div>
+
 <kendo-expansionpanel *ngFor="let item of menu; let index = index" [title]="item.name | translate">
 	<div class="ion-padding" slot="content">
 		<div *ngFor="let subItem of item.menuItems">

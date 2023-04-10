@@ -12,3 +12,7 @@ export type Menu = {
 	name: string;
 	menuItems: MenuItem[];
 };
+
+export type GetMenuRequest = {
+	name: string | null;
+};
