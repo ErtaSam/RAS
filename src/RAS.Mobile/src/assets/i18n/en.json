@@ -13,25 +13,50 @@
 		"dontHaveAccount": "Don't have an account?",
 		"haveAccount": "Already have an account?",
 		"signUp": "Sign up",
+		"roles": "Roles",
 		"birthDate": "Birth date",
-		"status": "Status"
-	},
-
-	"menu": {
-		"profile": "Profile"
+		"title": "Title",
+		"text": "Text",
+		"driver": "Driver",
+		"departedAt": "Departed at",
+		"arrivedAt": "Arrived at",
+		"status": "Status",
+		"responsible": "Responsible",
+		"reply": "Reply"
 	},
 
 	"action": {
+		"send": "Send",
 		"delete": "Delete",
 		"cancel": "Cancel",
 		"save": "Save",
-		"confirm": "Confirm"
+		"confirm": "Confirm",
+		"refresh": "Refresh",
+		"upload": "Upload",
+		"sendAll": "Send all",
+		"clear": "Clear",
+		"post": "Post",
+		"add": "Add",
+		"edit": "Edit",
+		"new": "New"
+	},
+
+	"menu": {
+		"users": "Users",
+		"forum": "Forum",
+		"profile": "Profile",
+		"trips": "Trips"
 	},
 
 	"alert": {
 		"success": "Success",
 		"info": "Info",
-		"error": "Error"
+		"error": "Error",
+		"notFound": "Not found",
+		"message": {
+			"inputRequired": "Input is required",
+			"delete": "Do you really want to delete?"
+		}
 	},
 
 	"ERROR": {
