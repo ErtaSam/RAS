@@ -8,7 +8,7 @@ using RAS.Core.Services.Menu;
 namespace RAS.API.Controllers;
 
 [ApiController]
-[Route("api/MenuItem")]
+[Route("api/menu")]
 public class MenuController : BaseController
 {
     public MenuController(IMenuService menuService)
@@ -25,7 +25,7 @@ public class MenuController : BaseController
         return Mapper.Map<MenuItemModel>(response);
     }
 
-    [HttpPost]
+    [HttpPost("menuItem")]
     public async Task<MenuItemModel> CreateMenuItem([FromBody] MenuItemModel request, CancellationToken cancellationToken = default)
     {
         var response = await MenuService.CreateMenuItem(Mapper.Map<MenuItemEntity>(request), cancellationToken);
@@ -39,7 +39,7 @@ public class MenuController : BaseController
         return Mapper.Map<ICollection<MenuModel>>(response);
     }
 
-    [HttpPost("menu")]
+    [HttpPost]
     public async Task<MenuModel> CreateMenu([FromBody] MenuModel request, CancellationToken cancellationToken = default)
     {
         var response = await MenuService.CreateMenu(Mapper.Map<MenuEntity>(request), cancellationToken);

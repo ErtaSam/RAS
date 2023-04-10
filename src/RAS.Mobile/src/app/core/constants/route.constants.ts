@@ -7,4 +7,10 @@ export const Routes: RouteInfo[] = [
 		icon: 'fa-regular fa-user',
 		type: 'link',
 	},
+	{
+		path: '/menu',
+		title: 'menu.menu',
+		icon: 'fa-solid fa-bars',
+		type: 'link',
+	},
 ];

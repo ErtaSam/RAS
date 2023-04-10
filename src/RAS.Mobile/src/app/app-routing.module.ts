@@ -16,6 +16,11 @@ const routes: Routes = [
 				loadChildren: () => import('./features/profile/profile.module').then((x) => x.ProfileModule),
 				canLoad: [OnlyAuthorizedGuard],
 			},
+			{
+				path: 'menu',
+				loadChildren: () => import('./features/menu/menu.module').then((x) => x.MenuModule),
+				canLoad: [OnlyAuthorizedGuard],
+			},
 		],
 	},
 	{
