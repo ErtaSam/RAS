@@ -6,9 +6,4 @@ export const AvailableCultures: Culture[] = [
 		isoCode: 'en',
 		default: true,
 	},
-	{
-		code: 'lt-LT',
-		isoCode: 'lt',
-		default: false,
-	},
 ];
