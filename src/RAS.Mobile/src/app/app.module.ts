@@ -1,7 +1,7 @@
 import { registerLocaleData } from '@angular/common';
 import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import localeEn from '@angular/common/locales/en';
 import localeLt from '@angular/common/locales/lt';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppInitializer } from './core/app.initializer';
 import { AccountPopupComponent } from './core/components/account-popup/account-popup.component';
+import { CultureChangeComponent } from './core/components/culture-change/culture-change.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { SidebarModule } from './core/components/sidebar/sidebar.module';
 import { ErrorNotificationInterceptor } from './core/interceptors/error-notification.interceptor';
@@ -25,7 +26,14 @@ function initApp(initializer: AppInitializer) {
 }
 
 @NgModule({
-	declarations: [AppComponent, NavbarComponent, MainLayoutComponent, UnauthorizedLayoutComponent, AccountPopupComponent],
+	declarations: [
+		AppComponent,
+		NavbarComponent,
+		MainLayoutComponent,
+		UnauthorizedLayoutComponent,
+		AccountPopupComponent,
+		CultureChangeComponent,
+	],
 	imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, TranslateModule.forRoot(), HttpClientModule, SidebarModule],
 	providers: [
 		AppInitializer,
