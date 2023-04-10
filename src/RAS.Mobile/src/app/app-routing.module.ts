@@ -16,6 +16,11 @@ const routes: Routes = [
 				loadChildren: () => import('./features/profile/profile.module').then((x) => x.ProfileModule),
 				canLoad: [OnlyAuthorizedGuard],
 			},
+			{
+				path: 'order',
+				loadChildren: () => import('./features/order/order.module').then((x) => x.OrderModule),
+				canLoad: [OnlyAuthorizedGuard],
+			},
 		],
 	},
 	{

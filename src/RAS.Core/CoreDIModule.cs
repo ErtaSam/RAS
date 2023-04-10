@@ -1,7 +1,10 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Http;
 using RAS.Core.Interfaces;
+using RAS.Core.Interfaces.Order;
 using RAS.Core.Services;
+using RAS.Core.Services.Order;
+using RAS.Core.Services.User;
 
 namespace RAS.Core;
 
@@ -20,5 +23,9 @@ public class CoreDIModule : Module
             }
             return new CallerAccessor(principal.Claims.ToList());
         }).InstancePerLifetimeScope();
+
+        builder.RegisterType<OrderService>()
+            .As<IOrderService>()
+            .InstancePerLifetimeScope();
     }
 }
