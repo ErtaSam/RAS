@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Menu } from '../../types/menu.types';
+import { GetMenuRequest, Menu } from '../../types/menu.types';
 
 @Injectable({
 	providedIn: 'root',
@@ -11,7 +11,11 @@ export class MenuService {
 		//
 	}
 
-	public getMenu(): Observable<Menu[]> {
-		return this.http.get<Menu[]>(`/api/menu`);
+	public getMenu(request: GetMenuRequest): Observable<Menu[]> {
+		return this.http.get<Menu[]>(`/api/menu`, {
+			params: {
+				name: request.name?.toString() ?? '',
+			},
+		});
 	}
 }
