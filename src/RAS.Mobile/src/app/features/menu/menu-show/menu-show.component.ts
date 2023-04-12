@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { debounceTime, switchMap } from 'rxjs';
+import { CartService } from '../../../core/services/api/cart.service';
 import { MenuService } from '../../../core/services/api/menu.service';
 import { GetMenuRequest, Menu, MenuItem } from '../../../core/types/menu.types';
 
@@ -10,7 +11,7 @@ import { GetMenuRequest, Menu, MenuItem } from '../../../core/types/menu.types';
 	styleUrls: ['./menu-show.component.scss'],
 })
 export class MenuShowComponent implements OnInit {
-	constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router) {
+	constructor(private menuService: MenuService, private route: ActivatedRoute, private router: Router, private cartService: CartService) {
 		// Nothing
 	}
 
@@ -56,5 +57,15 @@ export class MenuShowComponent implements OnInit {
 			queryParamsHandling: 'merge',
 			queryParams: params,
 		});
+	}
+
+	public addToCart(): void {
+		this.menuService.getMenu(this.request as GetMenuRequest).subscribe({
+			next: (response) => {
+				this.menu = response;
+			},
+		});
+
+		this.cartService.addToCart(this.menu);
 	}
 }
