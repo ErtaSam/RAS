@@ -20,7 +20,7 @@ export class OnlyUnauthorizedGuard implements CanActivate, CanLoad {
 
 	public canAccess(): boolean {
 		if (this.authService.isAuthenticated) {
-			this.router.navigate(['/trips']);
+			this.router.navigate(['/menu']);
 			return false;
 		}
 

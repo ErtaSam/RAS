@@ -14,11 +14,13 @@
 		"haveAccount": "Already have an account?",
 		"signUp": "Sign up",
 		"birthDate": "Birth date",
-		"status": "Status"
+		"status": "Status",
+		"name": "Name"
 	},
 
 	"menu": {
-		"profile": "Profile"
+		"profile": "Profile",
+		"menu": "Menu"
 	},
 
 	"action": {

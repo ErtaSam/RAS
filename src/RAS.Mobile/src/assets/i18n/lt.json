@@ -14,11 +14,13 @@
 		"haveAccount": "Jau turite paskyrą?",
 		"signUp": "Registruotis",
 		"birthDate": "Gimimo data",
-		"status": "Statusas"
+		"status": "Statusas",
+		"name": "Pavadinimas"
 	},
 
 	"menu": {
-		"profile": "Profilis"
+		"profile": "Profilis",
+		"menu": "Meniu"
 	},
 
 	"action": {
