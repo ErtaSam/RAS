@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OnlyUnauthorizedGuard } from '../../core/guards/only-unauthorized.guard';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
 		path: 'register',
 		component: RegisterComponent,
 		canActivate: [OnlyUnauthorizedGuard],
+	},
+	{
+		path: 'logout',
+		component: LogoutComponent,
 	},
 ];
 
