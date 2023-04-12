@@ -48,9 +48,9 @@ export class AuthService {
 	}
 
 	public logout(): void {
-		this.isAuthenticated = false;
 		localStorage.removeItem(this.tokenStorage);
 		this.accountService.discardUserDataOnSignOut();
+		this.isAuthenticated = false;
 		this.router.navigate([this.loginRoute]);
 		this.isAuthenticatedSubject.next(false);
 	}

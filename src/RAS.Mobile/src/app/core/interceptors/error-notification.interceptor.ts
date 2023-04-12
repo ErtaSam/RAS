@@ -11,6 +11,10 @@ export class ErrorNotificationInterceptor implements HttpInterceptor {
 	}
 
 	public intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+		if (request.url.includes('api/profile')) {
+			return next.handle(request);
+		}
+
 		return next.handle(request).pipe(
 			tap({
 				error: (error) => {
