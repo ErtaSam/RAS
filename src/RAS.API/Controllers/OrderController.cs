@@ -2,6 +2,7 @@
 using RAS.Core.Aggregates.Order.Entities;
 using RAS.Core.Aggregates.Order.Models;
 using RAS.Core.Interfaces.Order;
+using System.Threading.Tasks;
 
 namespace RAS.API.Controllers;
 
@@ -16,6 +17,13 @@ public class OrderController : BaseController
 
     private IOrderService OrderService { get; }
 
+    [HttpGet]
+    public async Task<ICollection<OrderModel>> GetOrders(CancellationToken cancellationToken = default)
+    {
+        var response = await OrderService.GetOrders(Caller.UserId, cancellationToken);
+        return Mapper.Map<ICollection<OrderModel>>(response);
+    }
+
     [HttpGet("{orderId:Guid}")]
     public async Task<OrderModel> GetOrder([FromRoute] Guid orderId, CancellationToken cancellationToken = default)
     {
@@ -26,7 +34,7 @@ public class OrderController : BaseController
     [HttpPost]
     public async Task<OrderModel> CreateOrder([FromBody] OrderModel request, CancellationToken cancellationToken = default)
     {
-        var response = await OrderService.CreateOrder(Mapper.Map<OrderEntity>(request), cancellationToken);
+        var response = await OrderService.CreateOrder(Caller.UserId, Mapper.Map<OrderEntity>(request), cancellationToken);
         return Mapper.Map<OrderModel>(response);
     }
 }

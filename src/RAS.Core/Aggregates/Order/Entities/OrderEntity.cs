@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAS.Core.Aggregates.User.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,9 @@ public class OrderEntity : BaseEntity, IAggregateRoot
 {
     public string Status { get; set; } = null!;
     public decimal Sum { get; set; }
+    public Guid UserId { get; set; }
 
+    public UserEntity User { get; set; }
 
     public void Cancelled()
     {
