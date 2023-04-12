@@ -18,6 +18,10 @@ export class MenuShowComponent implements OnInit {
 	public request?: GetMenuRequest;
 	public menu: Menu[] = [];
 
+	public get buttonDisabled(): boolean {
+		return !this.menu.some((m) => m.menuItems.some((menuItem) => menuItem.quantity && menuItem.quantity > 0));
+	}
+
 	public ngOnInit(): void {
 		this.initParameterMap();
 	}

@@ -15,19 +15,23 @@
 		"signUp": "Sign up",
 		"birthDate": "Birth date",
 		"status": "Status",
-		"name": "Name"
+		"name": "Name",
+		"price": "Price",
+		"quantity": "Quantity"
 	},
 
 	"menu": {
 		"profile": "Profile",
-		"menu": "Menu"
+		"menu": "Menu",
+		"cart": "Cart"
 	},
 
 	"action": {
 		"delete": "Delete",
 		"cancel": "Cancel",
 		"save": "Save",
-		"confirm": "Confirm"
+		"confirm": "Confirm",
+		"addToCart": "Add to cart"
 	},
 
 	"alert": {

@@ -21,12 +21,13 @@
 				<button>{{ subItem.quantity ?? 0 }}</button>
 				<button class="btn btn-sm btn-primary" (click)="changeQuantity(subItem, 1)"><i class="fa-solid fa-circle-plus"></i></button>
 			</div>
-			<icon-button
-				icon="bag-add-outline"
-				expand="full"
-				(onClick)="addToCart()"
-				[title]="'action.addToCart' | translate"
-			></icon-button>
 		</div>
 	</div>
 </kendo-expansionpanel>
+<icon-button
+	[disabled]="buttonDisabled"
+	icon="bag-add-outline"
+	expand="full"
+	(onClick)="addToCart()"
+	[title]="'action.addToCart' | translate"
+></icon-button>
