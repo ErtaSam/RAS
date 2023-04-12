@@ -17,13 +17,15 @@
 		"status": "Statusas",
 		"name": "Pavadinimas",
 		"price": "Kaina",
-		"quantity": "Kiekis"
+		"quantity": "Kiekis",
+		"sum": "Suma"
 	},
 
 	"menu": {
 		"profile": "Profilis",
 		"menu": "Meniu",
-		"cart": "Krepšelis"
+		"cart": "Krepšelis",
+		"orders": "Užsakymai"
 	},
 
 	"action": {

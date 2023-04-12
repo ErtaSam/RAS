@@ -21,7 +21,7 @@ const routes: Routes = [
 				canLoad: [OnlyAuthorizedGuard],
 			},
 			{
-				path: 'order',
+				path: 'orders',
 				loadChildren: () => import('./features/order/order.module').then((x) => x.OrderModule),
 				canLoad: [OnlyAuthorizedGuard],
 			},

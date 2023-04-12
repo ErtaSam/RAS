@@ -17,13 +17,15 @@
 		"status": "Status",
 		"name": "Name",
 		"price": "Price",
-		"quantity": "Quantity"
+		"quantity": "Quantity",
+		"sum": "Sum"
 	},
 
 	"menu": {
 		"profile": "Profile",
 		"menu": "Menu",
-		"cart": "Cart"
+		"cart": "Cart",
+		"orders": "Orders"
 	},
 
 	"action": {
