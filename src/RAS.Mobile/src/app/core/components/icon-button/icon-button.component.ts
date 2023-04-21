@@ -9,7 +9,7 @@ export class IconButtonComponent {
 	public icon: string = '';
 
 	@Input()
-	public color: string = 'primary';
+	public buttonClass: string = 'btn btn-primary';
 
 	@Input()
 	public title: string = '';

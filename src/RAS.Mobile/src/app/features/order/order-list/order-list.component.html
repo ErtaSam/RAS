@@ -1,0 +1,10 @@
+<div class="card px-4 py-2 mb-2" *ngFor="let item of orders">
+	<div class="d-flex justify-content-between">
+		<p>{{ 'label.sum' | translate }}</p>
+		<p>{{item.sum}} €</p>
+	</div>
+	<div class="d-flex justify-content-between">
+		<p>{{ 'label.status' | translate }}</p>
+		<p>{{item.status}}</p>
+	</div>
+</div>

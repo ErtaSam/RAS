@@ -13,4 +13,16 @@ export const Routes: RouteInfo[] = [
 		icon: 'fa-solid fa-bars',
 		type: 'link',
 	},
+	{
+		path: '/cart',
+		title: 'menu.cart',
+		icon: 'fa-solid fa-cart-shopping',
+		type: 'link',
+	},
+	{
+		path: '/orders',
+		title: 'menu.orders',
+		icon: 'fa-solid fa-circle-check',
+		type: 'link',
+	},
 ];

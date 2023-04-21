@@ -3,19 +3,19 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { OrderShowComponent } from './order-show.component';
+import { OrderListComponent } from './order-list.component';
 
-describe('OrderShowComponent', () => {
-	let component: OrderShowComponent;
-	let fixture: ComponentFixture<OrderShowComponent>;
+describe('OrderListComponent', () => {
+	let component: OrderListComponent;
+	let fixture: ComponentFixture<OrderListComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [OrderShowComponent],
+			declarations: [OrderListComponent],
 			imports: [HttpClientModule, RouterTestingModule, TranslateModule.forRoot()],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(OrderShowComponent);
+		fixture = TestBed.createComponent(OrderListComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

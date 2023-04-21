@@ -1,4 +1,4 @@
-<button [disabled]="disabled" (click)="onClick.emit()">
+<button [class]="buttonClass" [disabled]="disabled" (click)="onClick.emit()">
 	<i *ngIf="icon" [class]="icon" style="margin-right: 0.5rem"></i>
 	{{ title }}
 </button>

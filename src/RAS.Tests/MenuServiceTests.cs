@@ -1,5 +1,6 @@
 ﻿using Moq;
 using RAS.Core.Aggregates.Menu.Entities;
+using RAS.Core.Aggregates.Menu.Requests;
 using RAS.Core.Aggregates.User.Entities;
 using RAS.Core.Exceptions;
 using RAS.Core.Interfaces.Menu;
@@ -14,7 +15,7 @@ public class MenuServiceTests
     {
         var service = GetService();
 
-        var menu = await service.GetMenu(new DateTime().AddHours(10));
+        var menu = await service.GetMenu(new GetMenuRequest(), new DateTime().AddHours(10));
         var result = menu.Where(x => x.Type != "Pusryčiai").Where(x => x.Type != "Pagrindinis");
 
         Assert.True(result.Count() == 0);

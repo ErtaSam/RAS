@@ -11,6 +11,10 @@ export class OrderService {
 		// nothing
 	}
 
+	public getOrders(): Observable<Order[]> {
+		return this.http.get<Order[]>(`/api/order`);
+	}
+
 	public getOrder(orderId: string): Observable<Order> {
 		return this.http.get<Order>(`/api/order/${orderId}`);
 	}

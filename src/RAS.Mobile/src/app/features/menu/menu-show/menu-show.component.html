@@ -24,3 +24,10 @@
 		</div>
 	</div>
 </kendo-expansionpanel>
+<icon-button
+	[disabled]="buttonDisabled"
+	icon="bag-add-outline"
+	expand="full"
+	(onClick)="addToCart()"
+	[title]="'action.addToCart' | translate"
+></icon-button>

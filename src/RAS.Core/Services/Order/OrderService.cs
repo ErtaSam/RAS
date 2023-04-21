@@ -14,6 +14,11 @@ public class OrderService : IOrderService
 
     private IRepository<OrderEntity> OrderRepo { get; }
 
+    public async Task<ICollection<OrderEntity>> GetOrders(Guid userId, CancellationToken cancellationToken = default)
+    {
+        return await OrderRepo.ListAsync(cancellationToken);
+    }
+
     public async Task<OrderEntity> GetOrder(Guid orderId, CancellationToken cancellationToken = default)
     {
         var order = await OrderRepo.GetByIdAsync(orderId, cancellationToken);
@@ -26,8 +31,9 @@ public class OrderService : IOrderService
         return order;
     }
 
-    public async Task<OrderEntity> CreateOrder(OrderEntity request, CancellationToken cancellationToken = default)
+    public async Task<OrderEntity> CreateOrder(Guid userId, OrderEntity request, CancellationToken cancellationToken = default)
     {
+        request.UserId = userId;
         return await OrderRepo.AddAsync(request, cancellationToken);
     }
 }

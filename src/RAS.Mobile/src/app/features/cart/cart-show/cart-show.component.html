@@ -1,0 +1,12 @@
+<div class="card px-4 py-2 mb-2" *ngFor="let item of cart">
+	<h3>{{ item.name | translate }}</h3>
+
+	<div class="d-flex justify-content-between">
+		<p>{{ 'label.price' | translate }}</p>
+		<p>{{item.price}} €</p>
+	</div>
+	<div class="d-flex justify-content-between">
+		<p>{{ 'label.quantity' | translate }}</p>
+		<p>{{item.quantity}}</p>
+	</div>
+</div>

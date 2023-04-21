@@ -1,18 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OnlyAuthorizedGuard } from '../../core/guards/only-authorized.guard';
-import { OrderListComponent } from './order-list/order-list.component';
-import { OrderShowComponent } from './order-show/order-show.component';
+import { CartShowComponent } from './cart-show/cart-show.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: OrderListComponent,
-		canActivate: [OnlyAuthorizedGuard],
-	},
-	{
-		path: ':id',
-		component: OrderShowComponent,
+		component: CartShowComponent,
 		canActivate: [OnlyAuthorizedGuard],
 	},
 ];
@@ -21,4 +15,4 @@ const routes: Routes = [
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 })
-export class OrderRoutingModule {}
+export class CartRoutingModule {}

@@ -12,6 +12,12 @@ public class OrderEntityConfiguration : BaseEntityConfiguration<OrderEntity>
                           
         builder.Property(x => x.Status).IsRequired().HasColumnType("nvarchar(64)");
         builder.Property(x => x.Sum).IsRequired();
-        
+
+        builder
+            .HasOne(x => x.User)
+            .WithMany()
+            .HasForeignKey(x => x.UserId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
