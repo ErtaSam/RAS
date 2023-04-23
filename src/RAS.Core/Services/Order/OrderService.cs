@@ -34,6 +34,12 @@ public class OrderService : IOrderService
     public async Task<OrderEntity> CreateOrder(Guid userId, OrderEntity request, CancellationToken cancellationToken = default)
     {
         request.UserId = userId;
+
         return await OrderRepo.AddAsync(request, cancellationToken);
+    }
+
+    public async Task<ICollection<OrderEntity>> GetLastUserOrders(Guid userId, CancellationToken cancellationToken = default)
+    {
+        return null;
     }
 }
