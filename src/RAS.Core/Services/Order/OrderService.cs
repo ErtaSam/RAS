@@ -40,6 +40,10 @@ public class OrderService : IOrderService
 
     public async Task<ICollection<OrderEntity>> GetLastUserOrders(Guid userId, CancellationToken cancellationToken = default)
     {
-        return null;
+        var orders = await GetOrders(userId, cancellationToken);
+
+        var oneYearAgo = DateTimeOffset.UtcNow.AddYears(-1);
+
+        return orders.Where(x => x.CreatedAt > oneYearAgo).OrderByDescending(x => x.CreatedAt).Take(5).ToList();
     }
 }
