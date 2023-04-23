@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RAS.Core.Aggregates.Order.Entities;
+using RAS.Core.Aggregates.User.Entities;
 using RAS.Core.Aggregates.Order.Models;
+using RAS.Core.Aggregates.User.Models;
 using RAS.Core.Interfaces.Order;
+using RAS.Core.Interfaces.User;
 using System.Threading.Tasks;
 
 namespace RAS.API.Controllers;
@@ -36,5 +39,13 @@ public class OrderController : BaseController
     {
         var response = await OrderService.CreateOrder(Caller.UserId, Mapper.Map<OrderEntity>(request), cancellationToken);
         return Mapper.Map<OrderModel>(response);
+    }
+
+    [HttpGet("Last")]
+    public async Task<ICollection<OrderModel>> GetLastOrders(CancellationToken cancellationToken = default)
+    {
+        var response = await OrderService.GetLastUserOrders(Caller.UserId, cancellationToken);
+
+        return Mapper.Map<ICollection<OrderModel>>(response);
     }
 }

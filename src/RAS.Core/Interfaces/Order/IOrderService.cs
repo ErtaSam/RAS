@@ -9,4 +9,6 @@ public interface IOrderService
     Task<OrderEntity> GetOrder(Guid orderId, CancellationToken cancellationToken = default);
 
     Task<OrderEntity> CreateOrder(Guid userId, OrderEntity request, CancellationToken cancellationToken = default);
+
+    Task<ICollection<OrderEntity>> GetLastUserOrders(Guid userId, CancellationToken cancellationToken = default);
 }
