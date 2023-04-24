@@ -1,6 +1,7 @@
 import { formatDate } from '@progress/kendo-angular-intl';
 // eslint-disable-next-line import/order
 import { Buffer } from 'buffer';
+import { v4 as uuidv4 } from 'uuid';
 import { DateOnly } from '../types/general.types';
 
 export function encodeBase64(data: string): string {
@@ -16,4 +17,8 @@ export function toDateOnly(date: Date | DateOnly | null | undefined): string | n
 	}
 
 	return formatDate(date, 'yyyy-MM-dd') as string;
+}
+
+export function newGuid(): string {
+	return uuidv4();
 }

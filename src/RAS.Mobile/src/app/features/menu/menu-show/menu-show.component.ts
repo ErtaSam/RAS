@@ -44,6 +44,7 @@ export class MenuShowComponent implements OnInit {
 				switchMap((params) => {
 					this.request = {
 						name: params.get('name'),
+						type: params.get('type'),
 					};
 					return this.menuService.getMenu(this.request);
 				}),

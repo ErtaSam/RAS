@@ -15,4 +15,5 @@ export type Menu = {
 
 export type GetMenuRequest = {
 	name: string | null;
+	type: string | null;
 };

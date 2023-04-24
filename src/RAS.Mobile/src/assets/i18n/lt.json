@@ -14,11 +14,12 @@
 		"haveAccount": "Jau turite paskyrą?",
 		"signUp": "Registruotis",
 		"birthDate": "Gimimo data",
-		"status": "Statusas",
+		"status": "Statusas: ",
 		"name": "Pavadinimas",
-		"price": "Kaina",
-		"quantity": "Kiekis",
-		"sum": "Suma"
+		"price": "Kaina: ",
+		"quantity": "Kiekis: ",
+		"sum": "Suma",
+		"total": "Iš viso: "
 	},
 
 	"menu": {
@@ -33,7 +34,9 @@
 		"cancel": "Atšaukti",
 		"save": "Išsaugoti",
 		"confirm": "Patvirtinti",
-		"addToCart": "Pridėti į krepšelį"
+		"addToCart": "Pridėti į krepšelį",
+		"cancelOrder": "Atšaukti užsakymą",
+		"pay": "Sumokėti"
 	},
 
 	"alert": {
