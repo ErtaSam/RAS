@@ -43,6 +43,6 @@ jobs:
     
     steps:
     - name: Run tests
-      run: npm run test --watch=false --browsers=ChromeHeadless
+      run: npm run test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless
       working-directory: ./src/RAS.Mobile
 
