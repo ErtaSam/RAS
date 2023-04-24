@@ -6,10 +6,12 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - './src/RAS.Mobile/**'
   pull_request:
     branches: [ "main" ]
-  paths:
-    -./src/RAS.Mobile/**
+    paths:
+      - './src/RAS.Mobile/**'
 
 jobs:
   build:
