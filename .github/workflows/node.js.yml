@@ -33,11 +33,11 @@ jobs:
       working-directory: ./src/RAS.Mobile
 
     - name: Run tests
-      run: ng test
+      run: npm run test
       working-directory: ./src/RAS.Mobile
 
     - name: Build
-      run: ng build
+      run: npm run build
       working-directory: ./src/RAS.Mobile
 
     - run: npm ci
