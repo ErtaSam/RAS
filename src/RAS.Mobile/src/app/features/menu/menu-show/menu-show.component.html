@@ -1,24 +1,25 @@
 <div class="row mb-3" *ngIf="request">
 	<div class="col-12 col-md-3 col-lg-2">
 		<kendo-floatinglabel class="w-100" [text]="'label.name' | translate">
-			<kendo-textbox placeholder=" " [(ngModel)]="request.name" (valueChange)="onFilterChange({name: $event})">
+			<kendo-textbox placeholder=" " [(ngModel)]="request.type" (valueChange)="onFilterChange({name: $event})">
 				<ng-template kendoComboBoxItemTemplate let-dataItem> {{dataItem.firstName + ' ' + dataItem.lastName}} </ng-template>
 			</kendo-textbox>
 		</kendo-floatinglabel>
 	</div>
 </div>
 
-<kendo-expansionpanel *ngFor="let item of menu; let index = index" [title]="item.name | translate">
+<kendo-expansionpanel *ngFor="let item of menu; let index = index" [title]="item.type | translate">
 	<div class="ion-padding" slot="content">
 		<div *ngFor="let subItem of item.menuItems">
+			<hr class="horizontal dark mt-0" />
 			<p>{{ subItem.name | translate }}</p>
 
-			<div style="display: flex; align-items: center">
+			<div style="display: flex">
 				<p style="margin-right: 1rem">{{ subItem.price }} €</p>
 				<button class="btn btn-sm btn-primary" (click)="changeQuantity(subItem, -1)">
 					<i class="fa-solid fa-circle-minus"></i>
 				</button>
-				<button>{{ subItem.quantity ?? 0 }}</button>
+				<button style="height: 30px">{{ subItem.quantity ?? 0 }}</button>
 				<button class="btn btn-sm btn-primary" (click)="changeQuantity(subItem, 1)"><i class="fa-solid fa-circle-plus"></i></button>
 			</div>
 		</div>
