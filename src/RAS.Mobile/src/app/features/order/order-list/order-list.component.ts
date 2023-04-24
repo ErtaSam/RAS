@@ -22,6 +22,7 @@ export class OrderListComponent implements OnInit {
 			},
 		});
 	}
+
 	public pay(sum: number): void {
 		this.orderService.createOrder({ id: newGuid(), status: 'Paid', sum: sum }).subscribe({
 			next: () => {

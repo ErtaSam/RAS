@@ -114,17 +114,17 @@ describe('CartShowComponent', () => {
 		expect(component.cart).withContext('4');
 	});
 
-	xit('should remove item when quantity decreases to 0', () => {
-		const item: MenuItem = { id: '1', name: 'Item 1', category: 'Gėrimai', price: 2, quantity: 1 };
-		component.cart = [item];
-		fixture.detectChanges();
+	// xit('should remove item when quantity decreases to 0', () => {
+	// 	const item: MenuItem = { id: '1', name: 'Item 1', category: 'Gėrimai', price: 2, quantity: 1 };
+	// 	component.cart = [item];
+	// 	fixture.detectChanges();
 
-		component.changeParameters(item, -1);
+	// 	component.changeParameters(item, -1);
 
-		fixture.detectChanges();
+	// 	fixture.detectChanges();
 
-		expect(component.cart.length).toBe(0);
-	});
+	// 	expect(component.cart.length).toBe(0);
+	// });
 
 	it('should remove all items from the cart', () => {
 		const item: MenuItem = { id: '1', name: 'Item 1', category: 'Gėrimai', price: 2, quantity: 1 };

@@ -22,6 +22,7 @@ export class OrderService {
 	public createOrder(order: Order): Observable<Order> {
 		return this.http.post<Order>(`/api/order`, order);
 	}
+
 	public getLast(): Observable<Order[]> {
 		return this.http.get<Order[]>(`/api/order/Last`);
 	}

@@ -18,9 +18,9 @@ describe('ProfileComponent', () => {
 			imports: [
 				HttpClientModule,
 				TranslateTestingModule.withTranslations({
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 					en: require('src/assets/i18n/en.json'),
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
 					lt: require('src/assets/i18n/lt.json'),
 				}),
 			],

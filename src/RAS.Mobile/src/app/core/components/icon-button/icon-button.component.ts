@@ -21,5 +21,6 @@ export class IconButtonComponent {
 	public expand: string = 'full';
 
 	@Output()
+	// eslint-disable-next-line @angular-eslint/no-output-on-prefix
 	public onClick: EventEmitter<void> = new EventEmitter<void>();
 }

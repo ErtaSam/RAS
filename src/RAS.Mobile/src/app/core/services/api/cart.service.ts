@@ -39,13 +39,12 @@ export class CartService {
 		this.cartSumSubject.next(0);
 	}
 
-	public updateCart(menuItem: MenuItem[]): void{
+	public updateCart(menuItem: MenuItem[]): void {
 		this.cart = menuItem;
 		this.updateSum();
 	}
-	private updateSum(): void{
-		this.cartSumSubject.next(this.cart.reduce((sum, item) => sum + item.price * item.quantity!, 0));
+
+	private updateSum(): void {
+		this.cartSumSubject.next(this.cart.reduce((sum, item) => sum + item.price * (item.quantity ?? 0), 0));
 	}
-
-
 }
