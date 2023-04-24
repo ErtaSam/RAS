@@ -26,6 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci --prefix /src/RAS.Mobile
-    - run: npm run build --if-present --prefix ../src/RAS.Mobile
-    - run: npm test --prefix /src/RAS.Mobile
+    - run: npm ci
+      working-directory: ./src/RAS.Mobile
+    - run: npm run build --if-present
+      working-directory: ./src/RAS.Mobile
+    - run: npm test
+      working-directory: ./src/RAS.Mobile
