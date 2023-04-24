@@ -37,5 +37,12 @@ module.exports = function (config) {
 		browsers: ['Chrome'],
 		singleRun: false,
 		restartOnFileChange: true,
+		browsers: ['ChromeHeadlessCI'],
+		customLaunchers: {
+			ChromeHeadlessCI: {
+				base: 'ChromeHeadless',
+				flags: ['--no-sandbox'],
+			},
+		},
 	});
 };
