@@ -1,7 +1,7 @@
 <div class="row mb-3" *ngIf="request">
 	<div class="col-12 col-md-3 col-lg-2">
 		<kendo-floatinglabel class="w-100" [text]="'label.name' | translate">
-			<kendo-textbox placeholder=" " [(ngModel)]="request.type" (valueChange)="onFilterChange({name: $event})">
+			<kendo-textbox placeholder=" " [(ngModel)]="request.type" (valueChange)="onFilterChange({name: $event})" id="type">
 				<ng-template kendoComboBoxItemTemplate let-dataItem> {{dataItem.firstName + ' ' + dataItem.lastName}} </ng-template>
 			</kendo-textbox>
 		</kendo-floatinglabel>

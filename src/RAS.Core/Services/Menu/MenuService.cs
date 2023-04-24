@@ -25,19 +25,8 @@ public class MenuService : IMenuService
     {
         var spec = new GetMenuSpec(request, dateTime);
         return  await MenuRepo.ListAsync(spec, cancellationToken);
-
-/*        if (dateTime.TimeOfDay <= new TimeSpan(11, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(8, 0, 0))
-        {
-            return menu.Where(x => x.MenuItems.Where(y => y.MenuItem.Category == "Pusryčiai" || y.MenuItem.Category == "Pagrindinis")).ToList();
-        }
-        else if (dateTime.TimeOfDay <= new TimeSpan(16, 0, 0) && dateTime.TimeOfDay >= new TimeSpan(11, 0, 0))
-        {
-            return menu.Where(x => x.Type == "Pietūs" || x.Type == "Pagrindinis").ToList();
-
-        }
-        return menu.Where(x => x.Type == "Pagrindinis").ToList();*/
     }
-
+    
     public async Task<MenuEntity> CreateMenu(MenuEntity request, CancellationToken cancellationToken = default)
     {
         await MenuRepo.AddAsync(request, cancellationToken);

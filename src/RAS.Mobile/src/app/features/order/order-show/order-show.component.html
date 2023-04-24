@@ -1,11 +1,11 @@
 <div class="card px-4 py-2">
 	<div class="d-flex justify-content-between">
-		<p class="fw-bold">{{ 'label.status' | translate }}</p>
-		<p>{{order?.status}}</p>
+		<p id="order_status_label" class="fw-bold">{{ 'label.status' | translate }}</p>
+		<p id="order_status">{{order?.status}}</p>
 	</div>
 	<div class="d-flex justify-content-between">
-		<p class="fw-bold">{{ 'label.sum' | translate }}</p>
-		<p>{{order?.sum}}</p>
+		<p id="order_sum_label" class="fw-bold">{{ 'label.sum' | translate }}</p>
+		<p id="order_sum">{{order?.sum}}</p>
 	</div>
 </div>
 <!-- <div class="card px-4 py-2 mb-2" *ngFor="let itemItem of item">
