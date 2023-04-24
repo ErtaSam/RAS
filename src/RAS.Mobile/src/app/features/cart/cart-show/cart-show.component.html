@@ -30,7 +30,12 @@
 		<div class="d-flex justify-content-between" style="align-items: center">
 			<h3 style="margin-bottom: 0">{{ 'label.total' | translate }} {{cartSum}} €</h3>
 			<div>
-				<icon-button icon="bag-add-outline" expand="full" [title]="'action.pay' | translate" (onClick)="pay()"></icon-button>
+				<icon-button
+					icon="bag-add-outline"
+					buttonClass="btn btn-primary m-0"
+					[title]="'action.pay' | translate"
+					(onClick)="pay()"
+				></icon-button>
 			</div>
 		</div>
 	</div>

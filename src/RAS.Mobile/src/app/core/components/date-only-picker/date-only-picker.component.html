@@ -1,5 +1,5 @@
 <kendo-datepicker
-	placeholder=" "
+	[placeholder]="'label.birthDate' | translate"
 	[value]="value"
 	[disabled]="disabled"
 	(valueChange)="updateValue($event)"

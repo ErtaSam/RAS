@@ -11,6 +11,7 @@ export type Menu = {
 	type: string;
 	name: string;
 	menuItems: MenuItem[];
+	visible?: boolean;
 };
 
 export type GetMenuRequest = {

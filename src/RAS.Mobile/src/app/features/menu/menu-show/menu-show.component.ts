@@ -33,6 +33,9 @@ export class MenuShowComponent implements OnInit {
 		if (quantity < 0 && menuItem.quantity === 0) {
 			return;
 		}
+		if (quantity > 50) {
+			return;
+		}
 		menuItem.quantity += quantity;
 	}
 
