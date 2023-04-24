@@ -37,7 +37,7 @@ jobs:
       working-directory: ./src/RAS.Mobile
       
     - name: Run tests
-      run: npm run test --no-watch --no-progress --code-coverage --browsers=ChromeHeadless
+      run: npm run test --browsers=ChromeHeadless
       working-directory: ./src/RAS.Mobile
       
     - run: npm ci
