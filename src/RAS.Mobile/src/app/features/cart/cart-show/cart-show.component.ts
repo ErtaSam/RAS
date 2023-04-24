@@ -28,6 +28,9 @@ export class CartShowComponent {
 		if (quantity < 0 && menuItem.quantity === 0) {
 			return;
 		}
+		if (quantity > 50) {
+			return;
+		}
 		menuItem.quantity += quantity;
 
 		this.cartService.updateCart(this.cart);
