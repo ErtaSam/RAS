@@ -36,13 +36,10 @@ jobs:
       run: npm run build
       working-directory: ./src/RAS.Mobile
       
+    - name: Run tests
+      run: npm run test --browsers=ChromeHeadless
+      working-directory: ./src/RAS.Mobile
+      
     - run: npm ci
     
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Run tests
-      run: npm run test --watch=false --browsers=ChromeHeadless
-      working-directory: ./src/RAS.Mobile
 
