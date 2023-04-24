@@ -45,7 +45,3 @@ jobs:
       working-directory: ./src/RAS.Mobile
       env: 
         CI: true
-      
-    - run: npm ci
-    
-
