@@ -28,5 +28,5 @@ jobs:
     - name: Build
       run: dotnet build ./src/RAS.sln --no-restore
     
-    - name: Build
+    - name: Test
       run: dotnet test ./src/RAS.sln --no-build --verbosity normal
