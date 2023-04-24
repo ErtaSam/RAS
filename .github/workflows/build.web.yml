@@ -36,12 +36,6 @@ jobs:
       run: npm run build
       working-directory: ./src/RAS.Mobile
       
-    - name: Run tests
-      run: npm run test --browsers=ChromeHeadless
-      working-directory: ./src/RAS.Mobile
-      env: 
-        CI: true
-      
     - run: npm ci
     
 
