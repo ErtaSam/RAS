@@ -30,5 +30,22 @@ export class CartService {
 				}
 			});
 		});
+
+		this.updateSum();
 	}
+
+	public clearCart(): void {
+		this.cart = [];
+		this.cartSumSubject.next(0);
+	}
+
+	public updateCart(menuItem: MenuItem[]): void{
+		this.cart = menuItem;
+		this.updateSum();
+	}
+	private updateSum(): void{
+		this.cartSumSubject.next(this.cart.reduce((sum, item) => sum + item.price * item.quantity!, 0));
+	}
+
+
 }

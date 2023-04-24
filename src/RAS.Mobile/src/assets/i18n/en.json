@@ -14,11 +14,12 @@
 		"haveAccount": "Already have an account?",
 		"signUp": "Sign up",
 		"birthDate": "Birth date",
-		"status": "Status",
+		"status": "Status: ",
 		"name": "Name",
-		"price": "Price",
-		"quantity": "Quantity",
-		"sum": "Sum"
+		"price": "Price: ",
+		"quantity": "Quantity: ",
+		"sum": "Sum",
+		"total": "Total: "
 	},
 
 	"menu": {
@@ -33,7 +34,9 @@
 		"cancel": "Cancel",
 		"save": "Save",
 		"confirm": "Confirm",
-		"addToCart": "Add to cart"
+		"addToCart": "Add to cart",
+		"cancelOrder": "Cancel the order",
+		"pay": "Pay"
 	},
 
 	"alert": {
