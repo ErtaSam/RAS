@@ -28,10 +28,18 @@ export class SidebarComponent implements OnInit {
 		}
 	}
 
-	public toggleSidebar = (): void => {
+	public toggleSidebar(open?: boolean): void {
 		const layoutDiv = <HTMLElement>document.getElementById('MainLayout');
 
-		layoutDiv.classList.toggle('g-sidenav-pinned');
-		layoutDiv.classList.toggle('g-sidenav-hidden');
-	};
+		if (open === true) {
+			layoutDiv.classList.remove('g-sidenav-hidden');
+			layoutDiv.classList.add('g-sidenav-pinned');
+		} else if (open === false) {
+			layoutDiv.classList.remove('g-sidenav-pinned');
+			layoutDiv.classList.add('g-sidenav-hidden');
+		} else {
+			layoutDiv.classList.toggle('g-sidenav-pinned');
+			layoutDiv.classList.toggle('g-sidenav-hidden');
+		}
+	}
 }

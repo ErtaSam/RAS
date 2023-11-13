@@ -19,7 +19,13 @@
 		"price": "Price: ",
 		"quantity": "Quantity: ",
 		"sum": "Sum",
-		"total": "Total: "
+		"total": "Total: ",
+		"confirmPassword": "Confirm password",
+		"card": "Card",
+		"cardNumber": "Card number",
+		"expirationDate": "Expiration date",
+		"securityCode": "Security code",
+		"cartEmpty": "Cart is empty."
 	},
 
 	"menu": {

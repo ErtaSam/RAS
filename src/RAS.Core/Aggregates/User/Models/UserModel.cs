@@ -18,6 +18,8 @@ public class UserModel
 
     public DateOnly BirthDate { get; set; }
 
+    public string Role { get; set; } = null!;
+
     public UserEntity ToEntity(Guid id) => new()
     {
         Id = id,
@@ -26,6 +28,7 @@ public class UserModel
         Phone = Phone,
         Email = Email,
         BirthDate = BirthDate,
+        Role = Role
     };
 
 }

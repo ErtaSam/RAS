@@ -21,5 +21,6 @@ public class RegisterRequest
         LastName = LastName,
         Phone = Phone,
         Email = Email,
+        Role = "Klientas",
     };
 }

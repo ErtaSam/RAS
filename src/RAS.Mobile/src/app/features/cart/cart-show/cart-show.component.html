@@ -1,4 +1,8 @@
-<div *ngIf="cartSum > 0">
+<h3>{{ 'menu.cart' | translate }}</h3>
+
+<ng-template #noItems> {{ 'label.cartEmpty' | translate }} </ng-template>
+
+<div *ngIf="cartSum > 0; else noItems">
 	<icon-button
 		class="d-flex justify-content-end"
 		icon="bag-add-outline"

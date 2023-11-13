@@ -27,7 +27,25 @@
 					<input id="register_phone" class="form-control" formControlName="phone" [placeholder]="'label.phone' | translate" />
 				</div>
 				<div class="col-12 mb-3">
-					<date-only-picker id="register_birthDate" class="form-control" formControlName="birthDate"></date-only-picker>
+					<date-only-picker id="register_birthDate" formControlName="birthDate"></date-only-picker>
+				</div>
+				<div class="col-12 mb-3">
+					<input
+						id="register_password"
+						class="form-control"
+						formControlName="password"
+						[placeholder]="'label.password' | translate"
+						type="password"
+					/>
+				</div>
+				<div class="col-12 mb-3">
+					<input
+						id="register_confirm_password"
+						class="form-control"
+						formControlName="confirmPassword"
+						[placeholder]="'label.confirmPassword' | translate"
+						type="password"
+					/>
 				</div>
 			</div>
 		</form>

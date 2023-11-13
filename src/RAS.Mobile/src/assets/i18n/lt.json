@@ -19,7 +19,13 @@
 		"price": "Kaina: ",
 		"quantity": "Kiekis: ",
 		"sum": "Suma",
-		"total": "Iš viso: "
+		"total": "Iš viso: ",
+		"confirmPassword": "Patvirtinti slaptažodį",
+		"card": "Kortelė",
+		"cardNumber": "Kortelės numeris",
+		"expirationDate": "Galiojimo data",
+		"securityCode": "Saugos kodas",
+		"cartEmpty": "Krepšelis šiuo metu tuščias."
 	},
 
 	"menu": {

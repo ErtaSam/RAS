@@ -21,6 +21,7 @@ public class UserEntity : BaseEntity, IAggregateRoot
     public byte[] PasswordSalt { get; private set; } = Array.Empty<byte>();
     
     public byte[] PasswordHash { get; private set; } = Array.Empty<byte>();
+    public string Role { get; set; } = null!;
 
     #region Password
 

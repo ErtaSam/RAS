@@ -8,6 +8,7 @@ export type RegisterOnTouchFn = () => void;
 
 @Component({
 	selector: 'date-only-picker',
+	styleUrls: ['./date-only-picker.component.scss'],
 	templateUrl: './date-only-picker.component.html',
 })
 export class DateOnlyPickerComponent implements ControlValueAccessor {
