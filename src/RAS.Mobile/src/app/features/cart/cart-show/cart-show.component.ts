@@ -33,6 +33,10 @@ export class CartShowComponent {
 		}
 		menuItem.quantity += quantity;
 
+		if (menuItem.quantity === 0) {
+			this.cart = this.cart.filter((x) => x.name !== menuItem.name);
+		}
+
 		this.cartService.updateCart(this.cart);
 	}
 

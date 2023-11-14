@@ -24,7 +24,7 @@ export class AlertService {
 			title = this.translateService.instant('alert.error') as string;
 		}
 
-		Swal.fire(this.getAlertOptions(title, text, 'error', options));
+		Swal.fire(this.getAlertOptions(this.translateService.instant(title) as string, text, 'error', options));
 	}
 
 	public confirm(title?: string, text?: string, options?: SweetAlertOptions): Observable<SweetAlertResult<unknown>> {

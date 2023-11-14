@@ -6,12 +6,12 @@
 			<div class="row">
 				<div class="col-12 mb-3">
 					<kendo-floatinglabel class="w-100" [text]="'label.email' | translate"
-						><kendo-textbox formControlName="email" placeholder=" "></kendo-textbox
+						><kendo-textbox [setId]="'login_email'" formControlName="email" placeholder=" "></kendo-textbox
 					></kendo-floatinglabel>
 				</div>
 				<div class="col-12 mb-3">
 					<kendo-floatinglabel class="w-100" [text]="'label.password' | translate"
-						><input kendoTextBox type="password" formControlName="password" placeholder=" "
+						><input kendoTextBox [id]="'login_password'" type="password" formControlName="password" placeholder=" "
 					/></kendo-floatinglabel>
 				</div>
 			</div>

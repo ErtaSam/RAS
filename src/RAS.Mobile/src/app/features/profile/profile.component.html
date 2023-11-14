@@ -38,13 +38,20 @@
 <div class="mt-3 card py-4">
 	<div class="d-flex justify-content-between px-4">
 		<h3 id="title_card">{{ 'label.card' | translate }}</h3>
-		<button class="btn btn-primary" (click)="saveCardDetails()">{{ 'action.save' | translate }}</button>
+		<button [disabled]="formCard && formCard.invalid === true" class="btn btn-primary" (click)="saveCardDetails()">
+			{{ 'action.save' | translate }}
+		</button>
 	</div>
 	<form [formGroup]="formCard" class="px-4" *ngIf="formCard">
 		<div class="row">
 			<div class="col-12 mb-3">
 				<kendo-floatinglabel class="w-100" [text]="'label.fullName' | translate"
-					><kendo-textbox formControlName="fullName" placeholder=" " id="fullName"></kendo-textbox
+					><kendo-textbox
+						formControlName="fullName"
+						placeholder=" "
+						id="fullName"
+						[setId]="'profile_card_fullName'"
+					></kendo-textbox
 				></kendo-floatinglabel>
 			</div>
 
@@ -55,6 +62,7 @@
 						formControlName="cardNumber"
 						placeholder=" "
 						id="cardNumber"
+						[setId]="'profile_card_cardNumber'"
 					></kendo-maskedtextbox
 				></kendo-floatinglabel>
 			</div>
@@ -66,6 +74,7 @@
 						formControlName="expirationDate"
 						placeholder=" "
 						id="expirationDate"
+						[setId]="'profile_card_expirationDate'"
 					></kendo-maskedtextbox
 				></kendo-floatinglabel>
 			</div>
@@ -73,12 +82,14 @@
 			<div class="col-6 mb-3">
 				<kendo-floatinglabel class="w-100" [text]="'label.securityCode' | translate"
 					><kendo-numerictextbox
+						[setId]="'profile_card_securityCode'"
 						[spinners]="false"
 						formControlName="securityCode"
 						placeholder=" "
 						id="securityCode"
 						[decimals]="0"
 						format="n0"
+						[maxlength]="3"
 					></kendo-numerictextbox
 				></kendo-floatinglabel>
 			</div>

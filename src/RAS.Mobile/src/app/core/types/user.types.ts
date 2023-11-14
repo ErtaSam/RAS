@@ -43,8 +43,12 @@ export class UserHelpers {
 		return new UntypedFormGroup({
 			fullName: new FormControl<string>(card?.fullName ?? '', [Validators.required]),
 			cardNumber: new FormControl<string>(card?.cardNumber ?? '', [Validators.required]),
-			expirationDate: new FormControl<string>(card?.expirationDate ?? '', [Validators.required]),
-			securityCode: new FormControl<string>(card?.securityCode ?? '', [Validators.required]),
+			expirationDate: new FormControl<string>(card?.expirationDate ?? '', [Validators.required, CustomValidators.expirationDate]),
+			securityCode: new FormControl<string>(card?.securityCode ?? '', [
+				Validators.required,
+				Validators.minLength(3),
+				Validators.maxLength(3),
+			]),
 		});
 	}
 }

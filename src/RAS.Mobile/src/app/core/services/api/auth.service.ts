@@ -4,12 +4,18 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, forkJoin, Observable, tap } from 'rxjs';
 import { LoginRequest, LoginResponse, RegisterRequest } from '../../types/auth.types';
 import { AccountService } from '../account.service';
+import { AlertService } from '../alert.service';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class AuthService {
-	constructor(private http: HttpClient, private accountService: AccountService, private router: Router) {
+	constructor(
+		private http: HttpClient,
+		private accountService: AccountService,
+		private router: Router,
+		private alertService: AlertService,
+	) {
 		this.isAuthenticated = this.getToken() !== null;
 	}
 
@@ -28,10 +34,13 @@ export class AuthService {
 
 					forkJoin([this.accountService.getCurrentUser()]).subscribe({
 						next: () => {
-							this.router.navigate(['/profile']);
+							this.router.navigate(['/menu']);
 							this.isAuthenticatedSubject.next(true);
 						},
 					});
+				},
+				error: () => {
+					this.alertService.error('ERROR.ERROR_INCORRECT_CREDENTIALS');
 				},
 			}),
 		);

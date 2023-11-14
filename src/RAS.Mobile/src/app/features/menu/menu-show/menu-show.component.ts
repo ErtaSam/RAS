@@ -74,6 +74,8 @@ export class MenuShowComponent implements OnInit {
 			},
 		});
 
-		this.cartService.addToCart(this.menu);
+		const menu = this.menu.filter((m) => m.menuItems.some((menuItem) => menuItem.quantity && menuItem.quantity > 0));
+
+		this.cartService.addToCart(menu);
 	}
 }

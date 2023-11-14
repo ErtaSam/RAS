@@ -10,6 +10,7 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { DateOnlyPickerModule } from '../../core/components/date-only-picker/date-only-picker.module';
 
+import { CommonDirectivesModule } from '../../core/directives/common-directives.module';
 import { ProfileComponent } from './profile.component';
 import { ProfileRoutingModule } from './profile.routing';
 
@@ -29,6 +30,7 @@ import { ProfileRoutingModule } from './profile.routing';
 		DatePickerModule,
 		ButtonModule,
 		DateOnlyPickerModule,
+		CommonDirectivesModule,
 	],
 })
 export class ProfileModule {}

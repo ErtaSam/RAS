@@ -25,7 +25,8 @@
 		"cardNumber": "Kortelės numeris",
 		"expirationDate": "Galiojimo data",
 		"securityCode": "Saugos kodas",
-		"cartEmpty": "Krepšelis šiuo metu tuščias."
+		"cartEmpty": "Krepšelis šiuo metu tuščias.",
+		"address": "Adresas"
 	},
 
 	"menu": {
@@ -49,6 +50,10 @@
 		"success": "Sėkmingai išsaugota",
 		"info": "Informacija",
 		"error": "Klaida"
+	},
+
+	"status": {
+		"Paid": "Apmokėta"
 	},
 
 	"ERROR": {

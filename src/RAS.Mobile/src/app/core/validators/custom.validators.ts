@@ -17,4 +17,8 @@ export class CustomValidators {
 			return null;
 		};
 	}
+
+	public static get expirationDate(): ValidatorFn {
+		return Validators.pattern('^(0[1-9]|1[0-2])\\/?([0-9]{2})$');
+	}
 }

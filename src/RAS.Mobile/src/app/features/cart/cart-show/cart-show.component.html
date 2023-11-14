@@ -25,7 +25,7 @@
 			<button class="btn btn-sm btn-primary" (click)="changeParameters(item, -1)" [disabled]="item.quantity === 0 || !item.quantity">
 				<i class="fa-solid fa-circle-minus"></i>
 			</button>
-			<button style="height: 30px">{{ item.quantity ?? 0 }}</button>
+			<div style="height: 32px; width: 32px" class="d-flex justify-content-center align-self-center">{{ item.quantity ?? 0 }}</div>
 			<button class="btn btn-sm btn-primary" (click)="changeParameters(item, 1)" [disabled]="item.quantity === 50">
 				<i class="fa-solid fa-circle-plus"></i>
 			</button>

@@ -2,7 +2,7 @@
 
 <div class="card px-4 py-2 mb-2" *ngFor="let item of orders">
 	<div>
-		<h2>Sorry for not displaying content</h2>
+		<h2>{{('status.' + item.status) | translate}}</h2>
 		<hr class="horizontal dark mt-0" />
 		<div class="card px-4 py-2 mb-2">
 			<div class="d-flex justify-content-between">

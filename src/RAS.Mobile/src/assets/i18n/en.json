@@ -25,7 +25,8 @@
 		"cardNumber": "Card number",
 		"expirationDate": "Expiration date",
 		"securityCode": "Security code",
-		"cartEmpty": "Cart is empty."
+		"cartEmpty": "Cart is empty.",
+		"address": "Address"
 	},
 
 	"menu": {
@@ -49,6 +50,10 @@
 		"success": "Success",
 		"info": "Info",
 		"error": "Error"
+	},
+
+	"status": {
+		"Paid": "Paid"
 	},
 
 	"ERROR": {

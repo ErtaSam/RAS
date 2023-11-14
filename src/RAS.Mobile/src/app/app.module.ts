@@ -14,7 +14,6 @@ import { AccountPopupComponent } from './core/components/account-popup/account-p
 import { CultureChangeComponent } from './core/components/culture-change/culture-change.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { SidebarModule } from './core/components/sidebar/sidebar.module';
-import { ErrorNotificationInterceptor } from './core/interceptors/error-notification.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { SuccessNotificationInterceptor } from './core/interceptors/success-notification.interceptor';
 import { ServiceLocator } from './core/service-locator';
@@ -44,7 +43,7 @@ function initApp(initializer: AppInitializer) {
 			multi: true,
 		},
 		{ provide: HTTP_INTERCEPTORS, useClass: SuccessNotificationInterceptor, multi: true },
-		{ provide: HTTP_INTERCEPTORS, useClass: ErrorNotificationInterceptor, multi: true },
+		// { provide: HTTP_INTERCEPTORS, useClass: ErrorNotificationInterceptor, multi: true },
 		{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
 	],
 	bootstrap: [AppComponent],
